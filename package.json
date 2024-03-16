@@ -4,7 +4,7 @@
   "description": "Free and Open REST API of foruni.es",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js",
+    "start": "pm2-runtime start ecosystem.config.js --env production",
     "dev": "nodemon index.js"
   },
   "repository": {
