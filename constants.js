@@ -2,7 +2,7 @@ const DEVELOPMENT = 'development';
 const PRODUCTION = 'production';
 
 const DEVELOPMENT_DOMAIN = 'http://localhost:3000';
-const PRODUCTION_DOMAIN = 'https://foruni.es';
+const PRODUCTION_DOMAIN = 'https://foruni-frontend.vercel.app';
 
 const ERROR_LOGIN = 'Usuario o contraseña incorrectos.';
 const ERROR_400 = 'El formato de la petición no es correcto.';
