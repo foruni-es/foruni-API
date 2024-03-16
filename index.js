@@ -1,7 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const corsConfig = require('./cors/corsConfig');
+const cors = require('cors');
+/* const corsConfig = require('./cors/corsConfig'); */
 const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 
@@ -12,7 +13,8 @@ const userRoutes = require('./routes/userRoutes');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser()); 
-app.use(corsConfig);
+/* app.use(corsConfig); */
+app.use(cors())
 app.use(helmet());
 
 app.use('/universities', universityRoutes);
