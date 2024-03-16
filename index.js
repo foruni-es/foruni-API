@@ -21,6 +21,6 @@ app.use('/universities', universityRoutes);
 app.use('/threads', threadRoutes);
 app.use('/users', userRoutes);
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3001, () => {
     console.log(`App listening on port ${process.env.PORT}`);
 });

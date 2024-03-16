@@ -11,7 +11,6 @@ const connectionParameters = process.env.NODE_ENV === PRODUCTION ? process.env.D
     password: process.env.DB_PASSWORD
 } 
 
-
 const db = pgp(connectionParameters);
 
 module.exports = db;
