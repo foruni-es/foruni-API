@@ -2,7 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const cookieParser = require("cookie-parser");
+const cookieParser = require('cookie-parser');
+const helmet = require('helmet');
 
 const universityRoutes = require('./routes/universityRoutes');
 const threadRoutes = require('./routes/threadRoutes');
@@ -16,6 +17,7 @@ app.use(cookieParser());
     credentials: true
 })); */
 app.use(cors());
+app.use(helmet());
 
 app.use('/universities', universityRoutes);
 app.use('/threads', threadRoutes);
