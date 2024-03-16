@@ -1,7 +1,7 @@
 const cors = require('cors');
-const { DEVELOPMENT, PRODUCTION, DEVELOPMENT_DOMAIN, PRODUCTION_DOMAIN } = require('../constants');
+const { DEVELOPMENT, PRODUCTION, DEVELOPMENT_DOMAIN, PRODUCTION_DOMAIN, PRODUCTION_DOMAIN_2 } = require('../constants');
 
-const whitelist = [PRODUCTION_DOMAIN];
+const whitelist = [PRODUCTION_DOMAIN, PRODUCTION_DOMAIN_2];
 
 const corsConfig = cors({
     credentials: true,
