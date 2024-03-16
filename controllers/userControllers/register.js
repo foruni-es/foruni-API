@@ -9,6 +9,9 @@ const generateRandomCode = require('../../utils/generateRandomCode');
 const register = async (req, res) => {
 
     try {
+
+        return res.json({ message: 'La creación de nuevas cuentas está desactivada temporalmente. '});
+        
         const result = validationResult(req);
         if (!result.isEmpty()) return res.status(400).json({ message: result.array()[0].msg });
         
