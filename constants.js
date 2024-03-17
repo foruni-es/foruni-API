@@ -2,8 +2,7 @@ const DEVELOPMENT = 'development';
 const PRODUCTION = 'production';
 
 const DEVELOPMENT_DOMAIN = 'http://localhost:3000';
-const PRODUCTION_DOMAIN = 'https://foruni.es';
-const PRODUCTION_DOMAIN_2 = 'https://www.foruni.es'
+const PRODUCTION_DOMAIN = 'https://www.foruni.es'
 
 const ERROR_LOGIN = 'Usuario o contraseña incorrectos.';
 const ERROR_400 = 'El formato de la petición no es correcto.';
@@ -16,7 +15,6 @@ module.exports = {
     PRODUCTION,
     DEVELOPMENT_DOMAIN,
     PRODUCTION_DOMAIN,
-    PRODUCTION_DOMAIN_2,
     ERROR_LOGIN,
     ERROR_400,
     ERROR_401,
