@@ -12,8 +12,8 @@ const userRoutes = require('./routes/userRoutes');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser()); 
-app.use(corsConfig);
 app.use(helmet());
+app.use(corsConfig);
 
 app.use('/universities', universityRoutes);
 app.use('/threads', threadRoutes);
