@@ -7,7 +7,7 @@ const { GET_UNI } = require('../../database/queries/universityQueries');
 const getUniversity = async (req, res) => {
 
     try {
-        
+        return res.json({ message: "Prueba "});
         const result = validationResult(req);
         if (!result.isEmpty()) return res.status(404).json({ message: ERROR_404 });
         
