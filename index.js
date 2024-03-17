@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
+const corsConfig = require('./cors/corsConfig');
 
 const universityRoutes = require('./routes/universityRoutes');
 const threadRoutes = require('./routes/threadRoutes');
@@ -11,6 +12,7 @@ const userRoutes = require('./routes/userRoutes');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
+app.use(corsConfig);
 app.use(cookieParser());
 
 app.use('/universities', universityRoutes);

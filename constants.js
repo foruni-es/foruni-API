@@ -1,10 +1,6 @@
 const DEVELOPMENT = 'development';
 const PRODUCTION = 'production';
 
-const DEVELOPMENT_DOMAIN = 'http://localhost:3000';
-const PRODUCTION_DOMAIN = 'https://www.foruni.es';
-const PRODUCTION_DOMAIN_2 = 'https://foruni.es';
-
 const ERROR_LOGIN = 'Usuario o contraseña incorrectos.';
 const ERROR_400 = 'El formato de la petición no es correcto.';
 const ERROR_401 = 'Por favor, inicia sesión en tu cuenta.';
@@ -14,9 +10,6 @@ const ERROR_500 = 'Se ha producido un error en la aplicación.';
 module.exports = {
     DEVELOPMENT,
     PRODUCTION,
-    DEVELOPMENT_DOMAIN,
-    PRODUCTION_DOMAIN,
-    PRODUCTION_DOMAIN_2,
     ERROR_LOGIN,
     ERROR_400,
     ERROR_401,
