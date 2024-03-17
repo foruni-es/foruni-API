@@ -9,10 +9,7 @@ const corsConfig = cors({
         process.env.NODE_ENV === DEVELOPMENT ? 
         'http://localhost:3000'
         : process.env.NODE_ENV === PRODUCTION &&
-        function (origin, callback) {
-            if (whitelist.indexOf(origin) !== -1) callback(null, true);
-            else callback(new Error('Not allowed by CORS'));
-        }
+        whitelist    
 });
 
 module.exports = corsConfig;
