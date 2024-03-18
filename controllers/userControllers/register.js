@@ -51,7 +51,7 @@ const register = async (req, res) => {
 
                             <h3 style="text-align:center;">Gracias por registrarte</h3> 
                                         
-                            <p style="text-align:center;">Verifica tu dirección de email para acceder a FORUNI</p>
+                            <p style="text-align:center;">Verifica tu dirección de email para acceder a foruni</p>
                             
                             <a 
                                 style="text-align:center; padding:5px 10px; background-color:#1585E0; color:white; font-size:21px; text-decoration:none; border-radius:3px;" 
@@ -62,9 +62,9 @@ const register = async (req, res) => {
                             
                             <hr style="margin-top:20px;">
                             
-                            <p style="text-align:center; font-size:14px;">¿No te has registrado en FORUNI?</p>
+                            <p style="text-align:center; font-size:14px;">Si no te has registrado en foruni puedes ignorar este mensaje.</p>
     
-                            <p style="text-align:center; font-size:14px;">Ponte en contacto con nuestro equipo de soporte a través de soporte@foruni.es</p>
+                            <p style="text-align:center; font-size:14px;">Si tienes problemas para verificar tu cuenta, ponte en contacto con nuestro equipo de soporte a través de soporte@foruni.es</p>
 
                         </td>
                     </tr>
