@@ -11,7 +11,8 @@ const getUniversityByQuery = async (req, res) => {
         const result = validationResult(req);
         if (!result.isEmpty()) return res.status(404).json({ message: ERROR_404 });
         
-        const universities = await db.manyOrNone(GET_UNI_BY_SEARCH, ['%' + req.query.search + '%', '%' + req.query.search + '%']);
+        const formattedSearch = '%' + req.query.search + '%';
+        const universities = await db.manyOrNone(GET_UNI_BY_SEARCH, [formattedSearch, formattedSearch, formattedSearch]);
 
         res.json({ universities });
 
