@@ -11,7 +11,7 @@ const register = async (req, res) => {
 
     try {
         // Cortafuegos para impedir el registro de nuevos usuarios
-        // return res.json({ message: 'La creación de nuevas cuentas está desactivada temporalmente. '});
+        return res.json({ message: 'La creación de nuevas cuentas está desactivada temporalmente. '});
 
         const result = validationResult(req);
         if (!result.isEmpty()) return res.status(400).json({ message: result.array()[0].msg });
