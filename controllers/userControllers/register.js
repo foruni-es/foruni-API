@@ -25,7 +25,7 @@ const register = async (req, res) => {
         const salt = await bcrypt.genSalt();
         const encryptedPassword = await bcrypt.hash(req.body.password, salt);
 
-        const userId = await db.one(REGISTER_USER, [req.body.name, req.body.email, universityId, encryptedPassword, verificationCode]);
+        const { id: userId } = await db.one(REGISTER_USER, [req.body.name, req.body.email, universityId, encryptedPassword, verificationCode]);
 
         if (process.env.NODE_ENV === PRODUCTION) {
             // Envio del correo para la validacion del email
@@ -40,7 +40,7 @@ const register = async (req, res) => {
     
             await transporter.sendMail({
                 from: '"Soporte foruni" <soporte@foruni.es>', 
-                to: email, 
+                to: req.body.email, 
                 subject: "Validación de cuenta", 
                 text: `Bienvenid@ a foruni`,
                 html: // Usando table podemos centrar todo el contenido
