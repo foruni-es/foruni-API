@@ -3,6 +3,7 @@ const GET_THREADS =
     t.id, 
     t.user_id "authorId", 
     u.name "authorName",
+    u.verified_info "authorVerifiedInfo",
     uni.name "authorUni",
     uni.short_name "authorUniURL",
     t.title, 

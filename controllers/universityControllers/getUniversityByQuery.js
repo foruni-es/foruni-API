@@ -7,7 +7,7 @@ const { GET_UNI_BY_SEARCH } = require('../../database/queries/universityQueries'
 const getUniversityByQuery = async (req, res) => {
 
     try {
-        
+
         const result = validationResult(req);
         if (!result.isEmpty()) return res.status(404).json({ message: ERROR_404 });
         
