@@ -17,6 +17,9 @@ const registerMiddle = [
         .isLength({ min: 2, max: 32 })
             .withMessage('El nombre de usuario debe tener entre 2 y 32 caracteres.')
             .bail()
+        .isAlphanumeric('es-ES', {ignore: ' '})
+            .withMessage('El nombre solo puede contener letras, números y espacios en blanco.')
+            .bail()
         .custom(value => checkNameAvailable(value)),
     body('password')
         .notEmpty()
