@@ -25,7 +25,7 @@ const register = async (req, res) => {
         const salt = await bcrypt.genSalt();
         const encryptedPassword = await bcrypt.hash(req.body.password, salt);
 
-        const { id: userId } = await db.one(REGISTER_USER, [req.body.name, req.body.email, universityId, encryptedPassword, verificationCode]);
+        const userId = await db.one(REGISTER_USER, [req.body.name, req.body.email, universityId, encryptedPassword, verificationCode]);
 
         if (process.env.NODE_ENV === PRODUCTION) {
             // Envio del correo para la validacion del email
@@ -51,20 +51,20 @@ const register = async (req, res) => {
 
                             <h3 style="text-align:center;">Gracias por registrarte</h3> 
                                         
-                            <p style="text-align:center;">Verifica tu dirección de email para acceder a foruni</p>
+                            <p style="text-align:center;">Verifica tu dirección de email para acceder a FORUNI</p>
                             
-                                <a 
-                                    style="text-align:center; padding:5px 10px; background-color:#1585E0; color:white; font-size:21px; text-decoration:none; border-radius:3px;"
-                                    href="https://foruni.es/verificacion/email/id/${userId}/codigo/${verificationCode}"
-                                >
-                                    Verificar email
-                                </a>
+                            <a 
+                                style="text-align:center; padding:5px 10px; background-color:#1585E0; color:white; font-size:21px; text-decoration:none; border-radius:3px;" 
+                                href="https://foruni.es/verificacion/email/id/${userId}/codigo/${verificationCode}"
+                            >
+                                Verificar email
+                            </a>
                             
                             <hr style="margin-top:20px;">
                             
-                            <p style="text-align:center; font-size:14px;">Si no te has registrado en foruni puedes ignorar este mensaje</p>
+                            <p style="text-align:center; font-size:14px;">¿No te has registrado en FORUNI?</p>
     
-                            <p style="text-align:center; font-size:14px;">Si tienes algún problema para verificar tu cuenta, podemos ayudarte a través de soporte@foruni.es</p>
+                            <p style="text-align:center; font-size:14px;">Ponte en contacto con nuestro equipo de soporte a través de soporte@foruni.es</p>
 
                         </td>
                     </tr>
