@@ -19,7 +19,7 @@ const getUniversity = async (req, res) => {
 
     } catch (error) {
         if (process.env.NODE_ENV !== PRODUCTION) console.log(error);
-        res.status(500).json({ message: error });
+        res.status(500).json({ message: ERROR_500 });
     }
 }
 
