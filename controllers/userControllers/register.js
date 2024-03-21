@@ -11,7 +11,7 @@ const register = async (req, res) => {
 
     try {
         // Cortafuegos para impedir el registro de nuevos usuarios
-        return res.json({ message: 'La creación de nuevas cuentas está desactivada temporalmente. '});
+        // return res.status(500).json({ message: 'La creación de nuevas cuentas está desactivada temporalmente. '});
 
         const result = validationResult(req);
         if (!result.isEmpty()) return res.status(400).json({ message: result.array()[0].msg });
@@ -55,7 +55,7 @@ const register = async (req, res) => {
                             
                             <a 
                                 style="text-align:center; padding:5px 10px; background-color:#1585E0; color:white; font-size:21px; text-decoration:none; border-radius:3px;" 
-                                href="https://foruni.es/verificacion/email/id/${userId}/codigo/${verificationCode}"
+                                href="https://foruni.es/validacion?userId=${userId}&verificationCode=${verificationCode}"
                             >
                                 Verificar email
                             </a>

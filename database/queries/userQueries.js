@@ -16,6 +16,10 @@ const REGISTER_USER =
 VALUES ($1, $2, $3, $4, $5) 
 RETURNING id`;
 
+const ACCOUNT_VERIFICATION = 
+` UPDATE user_account SET verification_code = null 
+WHERE id = $1 AND verification_code = $2`;
+
 const LOGIN = 
 `SELECT
     u.id,
@@ -35,5 +39,6 @@ module.exports = {
     EMAIL_AVAILABLE,
     NAME_AVAILABLE,
     REGISTER_USER,
+    ACCOUNT_VERIFICATION,
     LOGIN
 }
