@@ -27,7 +27,7 @@ const LOGIN =
     u.name "userName",
     u.verification_code "verificationCode",
     u.banned,
-    u.verified,
+    u.verified_info "verifiedInfo",
     uni.id "uniId",
     uni.name "uniName",
     uni.short_name "uniShortName"
