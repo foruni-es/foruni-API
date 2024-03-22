@@ -27,7 +27,7 @@ const login = async (req, res) => {
             maxAge: 30 * 24 * 60 * 60 * 1000, // misma duración que el jwt
             httpOnly: process.env.NODE_ENV !== PRODUCTION ? false : true, 
             secure: process.env.NODE_ENV !== PRODUCTION ? false : true, 
-            sameSite: process.env.NODE_ENV !== PRODUCTION ? false : true
+            sameSite: process.env.NODE_ENV !== PRODUCTION ? false : 'none'
         }); 
 
         res.json({
