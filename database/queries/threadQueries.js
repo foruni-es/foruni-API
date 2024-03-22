@@ -29,7 +29,7 @@ AND id NOT IN (SELECT thread_id FROM thread_report WHERE admitted = true)`;
 
 const POST_THREAD =
 `INSERT INTO thread(user_id, title, content, university_id)
-VALUES ($1, $2, $3, $4);`;
+VALUES ($1, $2, $3, $4)`;
 
 module.exports = {
     GET_THREADS,
