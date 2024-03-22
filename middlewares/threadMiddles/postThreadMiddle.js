@@ -24,8 +24,8 @@ const postThreadMiddle = [
         .trim() 
         .notEmpty()
             .withMessage('El título del mensaje es un campo obligatorio.')
-        .isLength({ max: 64 })
-            .withMessage('La longitud del título no puede superar los 64 caracteres.'),
+        .isLength({ max: 256 })
+            .withMessage('La longitud del título no puede superar los 256 caracteres.'),
     body('content')
         .optional()
         .isString()
@@ -43,11 +43,7 @@ const postThreadMiddle = [
         .isArray({ min: 0, max: 5 })
             .withMessage('Puedes elegir hasta cinco etiquetas.')
             .bail()
-        .custom((value) => checkUniqueAndInt(value)),
-    body('respondsTo')
-        .optional()
-        .isInt()
-            .withMessage(ERROR_400)
+        .custom((value) => checkUniqueAndInt(value))
 ]
 
 module.exports = postThreadMiddle;

@@ -13,14 +13,13 @@ const postThread = require('../controllers/threadController/postThread');
 
 // --------------------------------------------------- RUTAS ---------------------------------------------------
 router.get('/', query('universityId').notEmpty().isInt(), getThreads);
-
 router.get('/:id', param('id').not().isEmpty().isInt(), getThread);
+router.post('/', [isLogged, ...postThreadMiddle], postThread);
 
 /* router.get('/:id/answers', (req, res) => {
     res.send("Listo");
 });*/
 
-router.post('/', [isLogged, ...postThreadMiddle], postThread);
 
 /* router.delete('/:id', (req, res) => {
     res.send("Listo");

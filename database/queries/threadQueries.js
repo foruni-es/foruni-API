@@ -13,7 +13,8 @@ FROM thread t
 JOIN user_account u ON t.user_id = u.id 
 JOIN university uni ON u.university_id = uni.id 
 WHERE t.university_id = $1 AND t.deleted = false 
-AND t.id NOT IN (SELECT thread_id FROM thread_report WHERE admitted = true)`;
+AND t.id NOT IN (SELECT thread_id FROM thread_report WHERE admitted = true)
+ORDER BY t.publication_datetime DESC`;
 
 const GET_THREAD = 
 `SELECT 
@@ -27,8 +28,8 @@ WHERE id = $1 AND deleted = false
 AND id NOT IN (SELECT thread_id FROM thread_report WHERE admitted = true)`;
 
 const POST_THREAD =
-`INSERT INTO thread(user_id, title, university_id, content, responds_to)
-	VALUES ();`;
+`INSERT INTO thread(user_id, title, content, university_id)
+VALUES ($1, $2, $3, $4);`;
 
 module.exports = {
     GET_THREADS,
